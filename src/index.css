@@ -1,0 +1,11 @@
+/* 设置标签的初始化样式 */
+@layer base {
+    h1{
+        @apply text-2xl;
+    }
+}
+@layer components {
+    .btn-blue {
+        @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75
+    }
+}
