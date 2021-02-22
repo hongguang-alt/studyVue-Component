@@ -53,7 +53,7 @@
       </p>
     </div>
     <h1>this is a boy</h1>
-    <button class="btn-blue">这是一个按钮</button>
+    <button class="btn-blue" @click="handleAlert">这是一个按钮Alert</button>
   </div>
 </template>
 
@@ -124,13 +124,19 @@ export default {
     handleReset() {
       this.$refs.form.resetFields();
     },
+    handleAlert() {
+      this.$Alert.info({
+        content: "这是一个消息通知",
+        duration: 1.5,
+      });
+    },
   },
 };
 </script>
 
 <style scoped>
 .btn {
-  @apply py-2 px-4 font-semibold rounded-lg shadow-md;
+  @apply py-2  font-semibold rounded-lg shadow-md;
 }
 .btn-green {
   @apply text-white bg-green-500 hover:bg-green-700;
