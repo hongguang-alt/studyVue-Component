@@ -23,6 +23,8 @@
     <button class="btn-blue" @click="handleAlert">这是一个按钮Alert</button>
     <h1>测试table表格</h1>
     <Table />
+    <h1>测试树</h1>
+    <i-tree :data="dataTest" :showCheckbox="true" />
   </div>
 </template>
 
@@ -35,6 +37,39 @@ import checkboxgroup from "./checkbox/checkbox-group";
 import display from "./display/display";
 import defaultCode from "./default-code.js";
 import Table from "./table-render/table-render.vue";
+import Tree from "./tree/tree.vue";
+const dataTest = [
+  {
+    title: "parent 1",
+    expand: true,
+    children: [
+      {
+        title: "parent 1-1",
+        expand: true,
+        children: [
+          {
+            title: "leaf 1-1-1",
+          },
+          {
+            title: "leaf 1-1-2",
+          },
+        ],
+      },
+      {
+        title: "parent 1-2",
+        children: [
+          {
+            title: "leaf 1-2-1",
+          },
+          {
+            title: "leaf 1-2-1",
+          },
+        ],
+      },
+    ],
+  },
+];
+
 export default {
   inject: ["message"],
   name: "HelloWorld",
@@ -46,6 +81,7 @@ export default {
     iCheckboxGroup: checkboxgroup,
     iDisplay: display,
     Table,
+    iTree: Tree,
   },
   props: {
     msg: String,
@@ -79,6 +115,7 @@ export default {
       },
       multiple: ["option1", "option3"],
       code: defaultCode,
+      dataTest: dataTest,
     };
   },
   methods: {
