@@ -20,40 +20,9 @@
     </i-checkbox-group>
     <h1>测试display</h1>
     <i-display :code="code"></i-display>
-    <div class="hello">
-      <div
-        class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
-      >
-        <div class="flex-shrink-0">
-          <img class="h-12 w-12" src="../assets/logo.png" alt="ChitChat Logo" />
-        </div>
-        <div>
-          <div class="text-xl font-medium text-black">ChitChat</div>
-          <p class="text-gray-500">You have a new message!</p>
-        </div>
-        <button
-          class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
-        >
-          {{ message }}
-        </button>
-      </div>
-    </div>
-    <button
-      class="py-2  px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700"
-    >
-      Click me
-    </button>
-    <button class="btn btn-green">
-      Button
-    </button>
-    <div class="bg-white dark:bg-gray-800">
-      <h1 class="text-gray-900 dark:text-white">Dark mode is here!</h1>
-      <p class="text-gray-600 dark:text-gray-300">
-        Lorem ipsum...
-      </p>
-    </div>
-    <h1>this is a boy</h1>
     <button class="btn-blue" @click="handleAlert">这是一个按钮Alert</button>
+    <h1>测试table表格</h1>
+    <Table />
   </div>
 </template>
 
@@ -65,6 +34,7 @@ import checkbox from "./checkbox/checkbox";
 import checkboxgroup from "./checkbox/checkbox-group";
 import display from "./display/display";
 import defaultCode from "./default-code.js";
+import Table from "./table-render/table-render.vue";
 export default {
   inject: ["message"],
   name: "HelloWorld",
@@ -75,6 +45,7 @@ export default {
     iCheckbox: checkbox,
     iCheckboxGroup: checkboxgroup,
     iDisplay: display,
+    Table,
   },
   props: {
     msg: String,
